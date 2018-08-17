@@ -1,39 +1,18 @@
-# test funciton
-# a = abs
-# print(a(-1))
-# def myFunc(x):
-    # if x >= 1:
-        # return 1
-    # else:
-        # return 0
-# print(myFunc(33))
+# 函数
+# 缺省值
+def test1(n=2):
+    print(n)
+test1(1)
+test1()
 
-# print(myFunc(int('a'))) 
+#可变参数
+def test2(*numbers):
+    n = len(numbers)
+    return n
+print(test2(1,2,3,4))
 
-# a = 'x'
-# def changea():
-    # a = 'y'
-# changea()
-# print(a)
-
-# test tuple
-# x,y,z = (1, 2, 3)
-# print(y)
-
-#test function
-# def changeablePara(*numbers):
-    # num = 0
-    # for n in numbers:
-        # num = num + n
-    # return num
-# tpa = (1, 2, 3, 4)
-# print(changeablePara(*tpa))
-
-# a = [1, 2, [3, 4]]
-# print(a)
-
-print(range(10))
-la = list(range(5))
-print(la)
-la = la[-3 : ]
-print(la)
+def test3(**cityPoint):
+    for (k,v) in cityPoint.items():
+        print('key:' + k + "value:" + v )
+test3(Beijing='100', Shanghai='88')        
+    
