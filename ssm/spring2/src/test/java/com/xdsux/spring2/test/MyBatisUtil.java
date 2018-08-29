@@ -1,4 +1,4 @@
-package com.xdsux.spring2.dao;
+package com.xdsux.spring2.test;
 
 import java.io.InputStream;
 
@@ -6,17 +6,13 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class MyBatisUtil {
-	
-    //GC不理static
-    private static SqlSessionFactory factory=null;
+public abstract class MyBatisUtil {
+    
     public static SqlSessionFactory getSqlSessionFactory(){
-        if(factory==null){
         // 获得环境配置文件流
         InputStream config = MyBatisUtil.class.getClassLoader().getResourceAsStream("MyBatisCfg.xml");
         // 创建sql会话工厂
-        factory = new SqlSessionFactoryBuilder().build(config);
-        }
+        SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(config);
         return factory;
     }
     
